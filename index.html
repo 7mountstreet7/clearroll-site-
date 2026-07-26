@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClearRoll — Find what's hiding in your camera roll</title>
-<meta name="description" content="ClearRoll scans your iPhone photos for passports, licences, payment cards, screenshot secrets and sensitive images — entirely on your device. No cloud, no account, no subscription.">
+<title>RollGuard — Find what's hiding in your camera roll</title>
+<meta name="description" content="RollGuard scans your iPhone photos for passports, licences, payment cards, screenshot secrets and sensitive images — entirely on your device. No cloud, no account, no subscription.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -40,7 +40,6 @@
   section{padding:96px 0;}
   section.tight{padding:64px 0;}
 
-  /* ---------- NAV ---------- */
   nav{
     max-width:920px;margin:0 auto;padding:28px 24px 0;
     display:flex;align-items:center;justify-content:space-between;
@@ -51,7 +50,6 @@
   .navlinks a{color:var(--ink-soft);text-decoration:none;}
   .navlinks a:hover{color:var(--teal-deep);}
 
-  /* ---------- HERO ---------- */
   .hero{padding:72px 0 40px;}
   .eyebrow{
     font-family:var(--font-mono);font-size:12.5px;color:var(--teal-deep);
@@ -76,7 +74,6 @@
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep);}
   .cta-note{font-family:var(--font-mono);font-size:12.5px;color:var(--ink-soft);}
 
-  /* ---------- SIGNATURE GRID ---------- */
   .grid-demo{margin-top:64px;}
   .grid-demo-label{
     font-family:var(--font-mono);font-size:12.5px;color:var(--ink-soft);
@@ -118,7 +115,6 @@
     .tiles{grid-template-columns:repeat(6,1fr);}
   }
 
-  /* ---------- SCAN LOG ---------- */
   .log-card{
     background:var(--ink);border-radius:var(--radius);padding:30px 32px;
     font-family:var(--font-mono);font-size:14px;color:#DDEAE5;
@@ -140,7 +136,6 @@
     letter-spacing:-0.01em;margin:0 0 14px;}
   .section-sub{color:var(--ink-soft);max-width:52ch;margin:0 0 40px;font-size:16px;}
 
-  /* ---------- PRIVACY / DEVICE ---------- */
   .privacy-row{display:flex;gap:48px;align-items:center;flex-wrap:wrap;}
   .device{flex-shrink:0;width:120px;height:220px;border:2.5px solid var(--ink);border-radius:22px;
     position:relative;}
@@ -152,7 +147,13 @@
   .privacy-text p{color:var(--ink-soft);font-size:16px;}
   .privacy-text strong{color:var(--ink);}
 
-  /* ---------- PRICING ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px;}
+  .why-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:26px 28px;}
+  .why-icon{font-size:22px;margin-bottom:10px;display:block;}
+  .why-title{font-family:var(--font-display);font-weight:700;font-size:17px;margin:0 0 8px;}
+  .why-body{color:var(--ink-soft);font-size:14.5px;margin:0;}
+  @media (max-width:640px){.why-grid{grid-template-columns:1fr;}}
+
   .price-card{
     background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
     padding:40px;max-width:460px;
@@ -165,13 +166,11 @@
   .price-list li:first-child{border-top:none;}
   .price-list li::before{content:'—';color:var(--teal);flex-shrink:0;}
 
-  /* ---------- FAQ ---------- */
   .faq-item{border-top:1px solid var(--line);padding:22px 0;}
   .faq-item:last-child{border-bottom:1px solid var(--line);}
   .faq-q{font-family:var(--font-display);font-weight:700;font-size:16.5px;margin:0 0 8px;}
   .faq-a{color:var(--ink-soft);font-size:15px;margin:0;max-width:60ch;}
 
-  /* ---------- SUPPORT ---------- */
   .support-card{
     background:var(--mint);border-radius:var(--radius);padding:36px 40px;
   }
@@ -189,7 +188,7 @@
 <body>
 
 <nav>
-  <a class="brand" href="#top">Clear<span>Roll</span></a>
+  <a class="brand" href="#top">Roll<span>Guard</span></a>
   <div class="navlinks">
     <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
@@ -204,10 +203,10 @@
   <section class="hero" id="top">
     <span class="eyebrow">iOS · fully on-device</span>
     <h1>Find what's hiding in your camera roll.</h1>
-    <p class="lede">ClearRoll scans your photos for passports, driver's licences, payment cards, and old password screenshots — without any of it ever leaving your phone.</p>
+    <p class="lede">RollGuard scans your photos for passports, driver's licences, payment cards, old password screenshots, and sensitive images — without any of it ever leaving your phone.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#pricing">See how it works</a>
-      <a class="btn btn-ghost" href="mailto:support@clearroll.app">Ask a question</a>
+      <a class="btn btn-ghost" href="mailto:support@rollguard.app">Ask a question</a>
     </div>
     <p class="cta-note" style="margin-top:14px;">Launching soon on the App Store.</p>
 
@@ -236,21 +235,48 @@
     <div class="privacy-row">
       <div class="device" aria-hidden="true"></div>
       <div class="privacy-text">
-        <p>ClearRoll doesn't have a server. There's no account to create, no photo ever uploaded, nothing sent anywhere for analysis. Every scan — and every result — stays <strong>on the device in your hand</strong>.</p>
-        <p>Once a scan finds something, you decide what happens to it: keep it, hide it from the app's own view, or delete it from your library. ClearRoll never acts on your photos without you telling it to.</p>
+        <p>RollGuard doesn't have a server. There's no account to create, no photo ever uploaded, nothing sent anywhere for analysis. Every scan — and every result — stays <strong>on the device in your hand</strong>.</p>
+        <p>Once a scan finds something, you decide what happens to it: keep it, hide it into your iPhone's own protected Hidden album — locked behind Face ID, Touch ID, or your passcode — or delete it from your library entirely. RollGuard never acts on your photos without you telling it to.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <h2>Why this matters</h2>
+    <p class="section-sub">Same scan, same on-device engine — these are just the moments people actually reach for it.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">💼</span>
+        <p class="why-title">Handing over a work phone</p>
+        <p class="why-body">IT policies, MDM tools, and shared backups can all reach your camera roll. Run a sweep before it's someone else's to manage.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📱</span>
+        <p class="why-title">Selling or trading in</p>
+        <p class="why-body">Backups carry everything forward, even what you meant to delete years ago. Check before you back up and hand it off.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">👨‍👩‍👧</span>
+        <p class="why-title">Handing your phone to family</p>
+        <p class="why-body">Kids playing games, grandparents scrolling photos — a quick sweep first means nothing sensitive is one swipe away.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">✈️</span>
+        <p class="why-title">Before you travel</p>
+        <p class="why-body">Border checks, lost phones, hotel WiFi — travel light on sensitive documents and old passwords, not just photos.</p>
       </div>
     </div>
   </section>
 
   <section id="pricing" class="tight">
     <h2>One price. No subscription, ever.</h2>
-    <p class="section-sub">The kind of app that scans your private photos shouldn't also be guessing what to bill you next month.</p>
+    <p class="section-sub">Free scan of your last 30 days shows you exactly what RollGuard finds — real results, not a demo. Unlock your full library whenever you're ready.</p>
     <div class="price-card">
-      <p class="price-head">ClearRoll Pro</p>
+      <p class="price-head">RollGuard Pro</p>
       <p class="price-sub">A single one-time purchase. Price shown on the App Store in your local currency.</p>
       <ul class="price-list">
         <li>Unlocks scanning your entire photo library, not just the last 30 days</li>
-        <li>Unlocks every Moments preset — work phone, selling, family handover, travel</li>
+        <li>Unlocks full control — choose exactly what to scan for, every time</li>
         <li>Pay once, use forever — no renewals, no reminders</li>
       </ul>
     </div>
@@ -260,16 +286,16 @@
   <section class="tight">
     <h2>A few honest answers</h2>
     <div class="faq-item">
-      <p class="faq-q">Does ClearRoll ever upload my photos?</p>
+      <p class="faq-q">Does RollGuard ever upload my photos?</p>
       <p class="faq-a">No. There's no server for it to talk to. Scanning, matching, and storing results all happen using your iPhone's own processor.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">What does "hide" actually do?</p>
-      <p class="faq-a">It removes an item from ClearRoll's own review queue without touching your photo library. "Delete" is the only action that removes the photo itself, and it always asks first.</p>
+      <p class="faq-a">It moves the photo into your iPhone's own Hidden album — the same feature built into the Photos app, locked behind Face ID, Touch ID, or your passcode. RollGuard doesn't create a separate hiding place of its own; it uses Apple's, and the photo stays fully in your control.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Is this a subscription?</p>
-      <p class="faq-a">No. ClearRoll Pro is a single one-time purchase that unlocks everything, permanently.</p>
+      <p class="faq-a">No. RollGuard Pro is a single one-time purchase that unlocks everything, permanently.</p>
     </div>
   </section>
 
@@ -277,21 +303,20 @@
     <h2>Support</h2>
     <div class="support-card">
       <p style="margin:0 0 14px;color:var(--ink-soft);">Need help, have feedback, or found a bug? Get in touch directly:</p>
-      <a class="mail-link" href="mailto:support@clearroll.app">support@clearroll.app</a>
+      <a class="mail-link" href="mailto:support@rollguard.app">support@rollguard.app</a>
     </div>
   </section>
 
   <footer>
     <div class="foot-row">
-      <span>© 2026 ClearRoll · <a href="/privacy.html">Privacy policy</a> · <a href="/terms.html">Terms</a></span>
-      <span>ClearRoll processes everything on your device. Your photos never leave your phone.</span>
+      <span>© 2026 RollGuard · <a href="/privacy.html">Privacy policy</a> · <a href="/terms.html">Terms</a></span>
+      <span>RollGuard processes everything on your device. Your photos never leave your phone.</span>
     </div>
   </footer>
 
 </div>
 
 <script>
-  // Build the 24-tile hero grid: a handful "flagged" to demonstrate the mechanic.
   const flaggedIndexes = new Set([3, 9, 14, 20]);
   const labels = {
     3: 'sensitive image detected',
