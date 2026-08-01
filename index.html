@@ -49,6 +49,10 @@
   .navlinks{display:flex;gap:28px;font-size:14px;font-weight:500;}
   .navlinks a{color:var(--ink-soft);text-decoration:none;}
   .navlinks a:hover{color:var(--teal-deep);}
+  @media (max-width:640px){
+    nav{flex-direction:column;align-items:flex-start;gap:14px;padding-top:20px;}
+    .navlinks{width:100%;flex-wrap:wrap;gap:14px 18px;font-size:13px;}
+  }
 
   .hero{padding:72px 0 40px;}
   .eyebrow{
@@ -58,8 +62,8 @@
   }
   h1{
     font-family:var(--font-display);font-weight:700;
-    font-size:clamp(34px, 5.2vw, 54px);line-height:1.06;letter-spacing:-0.02em;
-    margin:0 0 22px;max-width:11ch;
+    font-size:clamp(32px, 4.6vw, 50px);line-height:1.12;letter-spacing:-0.02em;
+    margin:0 0 22px;max-width:16ch;
   }
   .lede{font-size:18px;color:var(--ink-soft);max-width:46ch;margin:0 0 34px;}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
@@ -147,6 +151,13 @@
   .privacy-text p{color:var(--ink-soft);font-size:16px;}
   .privacy-text strong{color:var(--ink);}
 
+  .trust-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .trust-badge{
+    font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;
+  }
+
   .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px;}
   .why-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:26px 28px;}
   .why-icon{font-size:22px;margin-bottom:10px;display:block;}
@@ -194,7 +205,6 @@
     <a href="#pricing">Pricing</a>
     <a href="#support">Support</a>
     <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
   </div>
 </nav>
 
@@ -202,8 +212,8 @@
 
   <section class="hero" id="top">
     <span class="eyebrow">iOS · fully on-device</span>
-    <h1>Find what's hiding in your camera roll.</h1>
-    <p class="lede">RollGuard scans your photos for passports, driver's licences, payment cards, old password screenshots, and sensitive images — without any of it ever leaving your phone.</p>
+    <h1>Know what's hiding in your camera roll — before you hand over your phone.</h1>
+    <p class="lede">RollGuard scans your photos for identity documents like passports and driver's licences, payment cards, old password screenshots, and sensitive images — without any of it ever leaving your phone.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#pricing">See how it works</a>
       <a class="btn btn-ghost" href="mailto:support@rollguard.app">Ask a question</a>
@@ -219,17 +229,6 @@
     </div>
   </section>
 
-  <section id="how">
-    <h2>Four things it looks for</h2>
-    <p class="section-sub">Every scan runs the same four checks, on-device, and reports back plainly — no invented accuracy scores, no vague warnings.</p>
-    <div class="log-card">
-      <div class="log-line"><span class="log-tag">identity documents</span><span class="log-desc">passports, driver's licences, Medicare, TFN</span></div>
-      <div class="log-line"><span class="log-tag">payment cards</span><span class="log-desc">card numbers, verified with a Luhn check</span></div>
-      <div class="log-line"><span class="log-tag">screenshot secrets</span><span class="log-desc">passwords, OTP codes, banking, seed phrases</span></div>
-      <div class="log-line"><span class="log-tag">sensitive images</span><span class="log-desc">on-device detection, iOS 17 and later<span class="cursor"></span></span></div>
-    </div>
-  </section>
-
   <section class="tight">
     <h2>Nothing leaves your phone</h2>
     <div class="privacy-row">
@@ -237,7 +236,26 @@
       <div class="privacy-text">
         <p>RollGuard doesn't have a server. There's no account to create, no photo ever uploaded, nothing sent anywhere for analysis. Every scan — and every result — stays <strong>on the device in your hand</strong>.</p>
         <p>Once a scan finds something, you decide what happens to it: keep it, hide it into your iPhone's own protected Hidden album — locked behind Face ID, Touch ID, or your passcode — or delete it from your library entirely. RollGuard never acts on your photos without you telling it to.</p>
+        <div class="trust-badges">
+          <span class="trust-badge">100% on-device</span>
+          <span class="trust-badge">No account</span>
+          <span class="trust-badge">No cloud</span>
+          <span class="trust-badge">No uploads</span>
+          <span class="trust-badge">No tracking</span>
+          <span class="trust-badge">No subscription</span>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Four things it looks for</h2>
+    <p class="section-sub">Every scan runs the same four checks, on-device, and reports back plainly — no invented accuracy scores, no vague warnings.</p>
+    <div class="log-card">
+      <div class="log-line"><span class="log-tag">identity documents</span><span class="log-desc">passports, driver's licences, national ID cards, national medical cards, national tax identifiers</span></div>
+      <div class="log-line"><span class="log-tag">payment cards</span><span class="log-desc">card numbers, verified with a Luhn check</span></div>
+      <div class="log-line"><span class="log-tag">secrets & credentials</span><span class="log-desc">passwords, OTP codes, banking, seed phrases, WiFi and router credentials</span></div>
+      <div class="log-line"><span class="log-tag">sensitive images</span><span class="log-desc">on-device detection, iOS 17 and later<span class="cursor"></span></span></div>
     </div>
   </section>
 
@@ -280,7 +298,7 @@
         <li>Pay once, use forever — no renewals, no reminders</li>
       </ul>
     </div>
-    <p style="margin-top:22px;color:var(--ink-soft);font-size:14.5px;">The free version already runs a genuinely complete scan of your last 30 days, every category, re-scannable anytime.</p>
+    <p style="margin-top:22px;color:var(--ink-soft);font-size:14.5px;">The free version already runs a genuinely complete scan of your last 30 days, every category, re-scannable anytime — and it keeps quietly checking the rest of your library in the background too, showing you how much more is likely waiting. Unlock Pro to run a full scan and see and act on everything it finds.</p>
   </section>
 
   <section class="tight">
@@ -290,12 +308,20 @@
       <p class="faq-a">No. There's no server for it to talk to. Scanning, matching, and storing results all happen using your iPhone's own processor.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What does "hide" actually do?</p>
-      <p class="faq-a">It moves the photo into your iPhone's own Hidden album — the same feature built into the Photos app, locked behind Face ID, Touch ID, or your passcode. RollGuard doesn't create a separate hiding place of its own; it uses Apple's, and the photo stays fully in your control.</p>
+      <p class="faq-q">What do "Keep," "Hide," and "Delete" actually do?</p>
+      <p class="faq-a"><strong>Keep</strong> clears the item from RollGuard's review queue and leaves the photo exactly as it is. <strong>Hide</strong> moves it into your iPhone's own Hidden album — a standard iOS feature, protected by Face ID, Touch ID, or your passcode. RollGuard doesn't create a separate hiding place of its own; it uses Apple's, and the photo is never removed from your library. <strong>Delete</strong> is the only action that removes the photo itself, and it always asks Apple's system permission first, the same as deleting any photo manually.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Is this a subscription?</p>
       <p class="faq-a">No. RollGuard Pro is a single one-time purchase that unlocks everything, permanently.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Why do I need to keep the app open during a scan?</p>
+      <p class="faq-a">RollGuard only runs while it's open, by design — iOS pauses apps the moment you switch away or lock your screen, the same as any app without special permission to keep running in the background. A full scan can take a while depending on how many photos you have, so just leave RollGuard open and the screen unlocked until it finishes — you'll see live progress the whole time, and you can turn on a notification to know the moment it's done.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What happens if nothing's flagged?</p>
+      <p class="faq-a">RollGuard tells you exactly that — nothing hidden, no vague "all clear" message. If a scan finds nothing, RollGuard says so plainly and won't push you to buy anything you don't need: "Nothing else flagged this time. No need to upgrade to Pro right now — re-run this free scan every 30 days to stay on top of anything new."</p>
     </div>
   </section>
 
@@ -321,7 +347,7 @@
   const labels = {
     3: 'sensitive image detected',
     9: 'payment card detected',
-    14: 'password screenshot',
+    14: 'credential detected',
     20: 'identity document'
   };
   const tones = ['#CBD9D3','#D9CFC0','#C9D6DE','#DCCFD6','#CFDACB','#D2D2C4'];
